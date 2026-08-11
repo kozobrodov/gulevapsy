@@ -1,3 +1,80 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+    /* Soft, layered warm background that feels calm and organic */
+    background-image:
+      radial-gradient(60rem 60rem at 85% -10%, rgba(217, 184, 176, 0.28), transparent 60%),
+      radial-gradient(55rem 55rem at -10% 20%, rgba(198, 158, 127, 0.22), transparent 55%),
+      radial-gradient(50rem 50rem at 50% 120%, rgba(236, 220, 207, 0.5), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-clay-200 text-ink;
+  }
+}
+
+@layer components {
+  /* Section shell — consistent horizontal padding and max width */
+  .section {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply mb-3 inline-block text-xs font-semibold uppercase tracking-[0.22em] text-clay-500;
+  }
+
+  .heading {
+    @apply font-display text-4xl font-medium leading-tight text-ink sm:text-5xl;
+  }
+
+  /* Primary call-to-action button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-clay-500 px-7 py-3.5
+           text-sm font-semibold tracking-wide text-cream shadow-sm transition
+           hover:bg-clay-600 hover:shadow-md focus:outline-none focus-visible:ring-2
+           focus-visible:ring-clay-400 focus-visible:ring-offset-2 focus-visible:ring-offset-cream;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-clay-300/70
+           px-7 py-3.5 text-sm font-semibold tracking-wide text-ink transition
+           hover:border-clay-400 hover:bg-clay-50 focus:outline-none focus-visible:ring-2
+           focus-visible:ring-clay-400 focus-visible:ring-offset-2 focus-visible:ring-offset-cream;
+  }
+
+  /* Frosted card used across content sections */
+  .card {
+    @apply rounded-2xl border border-white/60 bg-white/55 p-6 shadow-[0_10px_40px_-24px_rgba(58,53,50,0.5)]
+           backdrop-blur-sm transition hover:bg-white/75 hover:shadow-[0_18px_50px_-24px_rgba(58,53,50,0.55)];
+  }
+
+  /* Gradient mask that fades the hero photo into the page background */
+  .hero-photo-mask {
+    -webkit-mask-image: linear-gradient(to bottom, black 62%, transparent 100%),
+      linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to bottom, black 62%, transparent 100%),
+      linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+    mask-composite: intersect;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar on the horizontal carousel while keeping it scrollable */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

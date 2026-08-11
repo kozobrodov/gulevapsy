@@ -1,13 +1,494 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gulevapsy</title>
+
+    <title>Виктория Гульева — психолог-консультант | Онлайн-консультации</title>
+    <meta
+      name="description"
+      content="Виктория Гульева — психолог-консультант, член Европейской ассоциации транзактного анализа. Онлайн-консультации: тревога, отношения, личные границы, самооценка. Работаю в транзактном анализе и ЭФТ."
+    />
+    <meta name="author" content="Виктория Гульева" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#a2705a" />
+    <link rel="canonical" href="https://guleva.psy/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="Виктория Гульева — психолог-консультант" />
+    <meta
+      property="og:description"
+      content="Онлайн-консультации психолога: тревога, отношения, личные границы, самооценка. Транзактный анализ и эмоционально-фокусированная терапия."
+    />
+    <meta property="og:image" content="/img/hero.jpg" />
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Site stylesheet (Tailwind, processed by Vite) -->
+    <script type="module" src="/src/main.js"></script>
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Виктория Гульева",
+        "jobTitle": "Психолог-консультант",
+        "description": "Психолог-консультант, член Европейской ассоциации транзактного анализа. Онлайн-консультации в подходах транзактного анализа и ЭФТ.",
+        "knowsAbout": ["Транзактный анализ", "Эмоционально-фокусированная терапия", "Психологическое консультирование", "Терапия пар"],
+        "sameAs": [
+          "https://t.me/guleva_psy",
+          "https://www.instagram.com/guleva_psy"
+        ]
+      }
+    </script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <!-- ===== Header ===== -->
+    <header class="sticky top-0 z-40 border-b border-white/40 bg-cream/80 backdrop-blur-md">
+      <div class="section flex h-16 items-center justify-between">
+        <a href="#hero" class="font-display text-xl font-semibold tracking-wide text-ink">
+          Виктория&nbsp;Гульева
+        </a>
+        <nav class="hidden items-center gap-8 text-sm font-medium text-ink-soft md:flex">
+          <a href="#about" class="transition hover:text-clay-500">Обо мне</a>
+          <a href="#work" class="transition hover:text-clay-500">С чем работаю</a>
+          <a href="#formats" class="transition hover:text-clay-500">Форматы</a>
+          <a href="#trust" class="transition hover:text-clay-500">Дипломы</a>
+          <a href="#price" class="transition hover:text-clay-500">Стоимость</a>
+        </nav>
+        <a href="#contacts" class="btn-primary !px-5 !py-2.5">Записаться</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== Hero ===== -->
+      <section id="hero" class="relative overflow-hidden">
+        <div class="section grid items-center gap-8 pb-16 pt-10 sm:pt-14 lg:grid-cols-2 lg:gap-6 lg:pb-24 lg:pt-20">
+          <div class="order-2 animate-fade-up lg:order-1">
+            <p class="eyebrow">Психолог-консультант</p>
+            <h1 class="font-display text-5xl font-medium leading-[1.05] text-ink sm:text-6xl lg:text-7xl">
+              Пространство,<br />где можно быть собой
+            </h1>
+            <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
+              Помогаю бережно разобраться с тревогой, отношениями и отношением к себе —
+              и почувствовать себя в безопасности рядом с собой и с другими.
+              Работаю онлайн в подходах транзактного анализа и эмоционально-фокусированной терапии.
+            </p>
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+              <a href="#contacts" class="btn-primary">Записаться на консультацию</a>
+              <a href="#about" class="btn-ghost">Узнать больше</a>
+            </div>
+            <p class="mt-6 text-sm font-medium text-ink-faint">
+              Член Европейской ассоциации транзактного анализа
+            </p>
+          </div>
+
+          <div class="order-1 lg:order-2">
+            <div class="relative mx-auto max-w-sm lg:max-w-md">
+              <!-- Warm glow behind the portrait -->
+              <div class="absolute inset-0 -z-10 translate-y-6 scale-110 rounded-[3rem] bg-gradient-to-br from-rose-200/60 via-clay-100/50 to-transparent blur-2xl"></div>
+              <img
+                src="/img/hero.jpg"
+                width="1000" height="1333"
+                alt="Виктория Гульева, психолог-консультант"
+                class="hero-photo-mask w-full select-none"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== About ===== -->
+      <section id="about" class="scroll-mt-20 py-16 sm:py-24">
+        <div class="section grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+          <div>
+            <p class="eyebrow">Обо мне</p>
+            <h2 class="heading">Терапия начинается с ощущения безопасности</h2>
+            <div class="mt-6 space-y-5 text-lg leading-relaxed text-ink-soft">
+              <p>
+                В терапии для меня важно не просто разобраться в причинах происходящего,
+                а помочь человеку почувствовать себя в безопасности рядом с собой и с другими.
+              </p>
+              <p>
+                Поэтому я сочетаю <strong class="font-semibold text-ink">транзактный анализ</strong>
+                и <strong class="font-semibold text-ink">эмоционально-фокусированную терапию</strong>:
+                один подход помогает увидеть жизненные сценарии, другой — исцелить эмоциональные раны,
+                которые продолжают влиять на отношения и качество жизни.
+              </p>
+              <p>
+                Регулярно прохожу личную терапию, супервизию и продолжаю профессиональное обучение:
+                считаю важным не только помогать другим, но и оставаться внимательной
+                к собственным процессам как специалист.
+              </p>
+            </div>
+
+            <dl class="mt-8 grid grid-cols-2 gap-4 sm:max-w-md">
+              <div class="card !p-5">
+                <dt class="text-sm text-ink-faint">Подходы</dt>
+                <dd class="mt-1 font-display text-2xl text-ink">ТА · ЭФТ</dd>
+              </div>
+              <div class="card !p-5">
+                <dt class="text-sm text-ink-faint">Формат</dt>
+                <dd class="mt-1 font-display text-2xl text-ink">Онлайн</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="relative">
+            <div class="absolute inset-0 -z-10 translate-x-4 translate-y-4 rounded-[2rem] bg-clay-100/60"></div>
+            <img
+              src="/img/about.jpg"
+              width="1200" height="1800"
+              alt="Виктория Гульева"
+              loading="lazy"
+              class="w-full rounded-[2rem] object-cover shadow-[0_25px_60px_-30px_rgba(58,53,50,0.6)]"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== What I work with ===== -->
+      <section id="work" class="scroll-mt-20 py-16 sm:py-24">
+        <div class="section">
+          <div class="max-w-2xl">
+            <p class="eyebrow">С чем я работаю</p>
+            <h2 class="heading">Запросы, с которыми можно прийти</h2>
+            <p class="mt-5 text-lg leading-relaxed text-ink-soft">
+              Если что-то из этого откликается — это уже достаточный повод обратиться.
+              Вместе мы найдём опору и точку, с которой можно двигаться дальше.
+            </p>
+          </div>
+
+          <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="card group h-full">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-clay-50 text-clay-500 transition group-hover:bg-clay-100">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.4 2.4M15.3 15.3l2.4 2.4M17.7 6.3l-2.4 2.4M8.7 15.3l-2.4 2.4"/></svg>
+              </div>
+              <h3 class="mt-5 font-display text-2xl text-ink">Тревога и напряжение</h3>
+              <p class="mt-3 leading-relaxed text-ink-soft">Когда сложно расслабиться, остановить поток мыслей или почувствовать себя в безопасности даже тогда, когда объективно всё хорошо.</p>
+            </article>
+
+            <article class="card group h-full">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-clay-50 text-clay-500 transition group-hover:bg-clay-100">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M12 20s-7-4.6-7-9.5A3.5 3.5 0 0 1 12 7a3.5 3.5 0 0 1 7 3.5C19 15.4 12 20 12 20Z"/></svg>
+              </div>
+              <h3 class="mt-5 font-display text-2xl text-ink">Отношения</h3>
+              <p class="mt-3 leading-relaxed text-ink-soft">Когда стало трудно слышать друг друга, возникают повторяющиеся конфликты, обиды, дистанция или ощущение, что вы стали чужими людьми.</p>
+            </article>
+
+            <article class="card group h-full">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-clay-50 text-clay-500 transition group-hover:bg-clay-100">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M12 3l7 3v6c0 4-3 6.5-7 9-4-2.5-7-5-7-9V6l7-3Z"/></svg>
+              </div>
+              <h3 class="mt-5 font-display text-2xl text-ink">Личные границы</h3>
+              <p class="mt-3 leading-relaxed text-ink-soft">Когда сложно говорить «нет», просить о помощи, выбирать себя без чувства вины и постоянно приходится подстраиваться под других.</p>
+            </article>
+
+            <article class="card group h-full">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-clay-50 text-clay-500 transition group-hover:bg-clay-100">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M12 3c3.3 0 6 3.1 6 7s-2.7 7-6 7-6-3.1-6-7 2.7-7 6-7Z"/><path d="M12 17v4M9 21h6"/></svg>
+              </div>
+              <h3 class="mt-5 font-display text-2xl text-ink">Самооценка и отношение к себе</h3>
+              <p class="mt-3 leading-relaxed text-ink-soft">Когда внутренний критик звучит громче поддержки, а собственная ценность зависит от достижений и одобрения окружающих.</p>
+            </article>
+
+            <article class="card group h-full">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-clay-50 text-clay-500 transition group-hover:bg-clay-100">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg>
+              </div>
+              <h3 class="mt-5 font-display text-2xl text-ink">Поиск себя и своих желаний</h3>
+              <p class="mt-3 leading-relaxed text-ink-soft">Когда жизнь идёт своим чередом, но всё чаще возникает вопрос: «А чего хочу я?»</p>
+            </article>
+
+            <article class="card group h-full">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-clay-50 text-clay-500 transition group-hover:bg-clay-100">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M12 21V9M12 9c0-3.3 2.7-6 6-6 0 3.3-2.7 6-6 6ZM12 12c0-2.8-2.2-5-5-5 0 2.8 2.2 5 5 5Z"/></svg>
+              </div>
+              <h3 class="mt-5 font-display text-2xl text-ink">Последствия детского опыта</h3>
+              <p class="mt-3 leading-relaxed text-ink-soft">Когда старые сценарии продолжают влиять на отношения, выборы и отношение к себе во взрослой жизни.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Approach / methods ===== -->
+      <section id="approach" class="scroll-mt-20 py-8 sm:py-12">
+        <div class="section">
+          <div class="overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-clay-500 to-clay-700 px-8 py-12 text-cream sm:px-14 sm:py-16">
+            <p class="mb-3 inline-block text-xs font-semibold uppercase tracking-[0.22em] text-clay-100">Мой подход</p>
+            <h2 class="max-w-3xl font-display text-4xl font-medium leading-tight sm:text-5xl">
+              Два метода, которые дополняют друг друга
+            </h2>
+            <div class="mt-10 grid gap-6 md:grid-cols-2">
+              <div class="rounded-2xl bg-white/10 p-7 backdrop-blur-sm">
+                <h3 class="font-display text-3xl">Транзактный анализ</h3>
+                <p class="mt-3 leading-relaxed text-clay-50/90">
+                  Помогает увидеть повторяющиеся жизненные сценарии и то, как они влияют
+                  на ваши выборы, отношения и отношение к себе.
+                </p>
+              </div>
+              <div class="rounded-2xl bg-white/10 p-7 backdrop-blur-sm">
+                <h3 class="font-display text-3xl">Эмоционально-фокусированная терапия</h3>
+                <p class="mt-3 leading-relaxed text-clay-50/90">
+                  Бережно работает с эмоциональными ранами, восстанавливая контакт с собой
+                  и близкими и возвращая ощущение опоры.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Formats ===== -->
+      <section id="formats" class="scroll-mt-20 py-16 sm:py-24">
+        <div class="section">
+          <div class="max-w-2xl">
+            <p class="eyebrow">Форматы работы</p>
+            <h2 class="heading">Как проходят встречи</h2>
+            <p class="mt-5 text-lg leading-relaxed text-ink-soft">
+              Консультации проходят онлайн. Вы можете записаться на индивидуальную или парную сессию.
+            </p>
+          </div>
+
+          <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="card h-full">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-clay-50 text-clay-500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+              <h3 class="mt-5 font-display text-2xl text-ink">Индивидуальная</h3>
+              <p class="mt-2 text-ink-soft">Личная сессия длится <strong class="font-semibold text-ink">50 минут</strong>.</p>
+            </article>
+            <article class="card h-full">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-clay-50 text-clay-500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 6a3 3 0 0 1 0 6M15 20a6 6 0 0 1 6-6"/></svg></div>
+              <h3 class="mt-5 font-display text-2xl text-ink">Парная</h3>
+              <p class="mt-2 text-ink-soft">Сессия для двоих длится <strong class="font-semibold text-ink">80 минут</strong>.</p>
+            </article>
+            <article class="card h-full">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-clay-50 text-clay-500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+              <h3 class="mt-5 font-display text-2xl text-ink">Онлайн</h3>
+              <p class="mt-2 text-ink-soft">Из любой точки мира. Оффлайн — по запросу.</p>
+            </article>
+            <article class="card h-full">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-clay-50 text-clay-500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></div>
+              <h3 class="mt-5 font-display text-2xl text-ink">Регулярность</h3>
+              <p class="mt-2 text-ink-soft">Стандартная частота — <strong class="font-semibold text-ink">1 раз в неделю</strong>.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Trust: diplomas & certificates ===== -->
+      <section id="trust" class="scroll-mt-20 py-16 sm:py-24">
+        <div class="section">
+          <div class="flex flex-wrap items-end justify-between gap-6">
+            <div class="max-w-2xl">
+              <p class="eyebrow">Образование и квалификация</p>
+              <h2 class="heading">Дипломы и сертификаты</h2>
+              <p class="mt-5 text-lg leading-relaxed text-ink-soft">
+                Профессиональная переподготовка в консультативной и семейной психологии,
+                обучение краткосрочной терапии пар и EFT Fundamentals.
+              </p>
+            </div>
+            <div class="hidden gap-3 sm:flex">
+              <button type="button" data-carousel-prev aria-label="Предыдущий" class="flex h-11 w-11 items-center justify-center rounded-full border border-clay-300/70 text-ink transition hover:bg-clay-50">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5"><path d="M15 6l-6 6 6 6"/></svg>
+              </button>
+              <button type="button" data-carousel-next aria-label="Следующий" class="flex h-11 w-11 items-center justify-center rounded-full border border-clay-300/70 text-ink transition hover:bg-clay-50">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div data-carousel-track class="no-scrollbar mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-4">
+            <figure class="group w-[80%] shrink-0 snap-center sm:w-[46%] lg:w-[32%]">
+              <button type="button" data-lightbox data-index="0" data-full="/img/usp.jpg"
+                      data-caption="Университет современной психологии — консультативная психология, 1000 часов"
+                      class="relative block w-full overflow-hidden rounded-2xl border border-white/60 bg-white shadow-[0_15px_45px_-28px_rgba(58,53,50,0.6)] transition hover:shadow-[0_22px_55px_-28px_rgba(58,53,50,0.6)] focus:outline-none focus-visible:ring-2 focus-visible:ring-clay-400">
+                <img src="/img/usp-thumb.jpg" alt="Диплом о профессиональной переподготовке" loading="lazy" class="aspect-[3/2] w-full bg-white object-contain p-3 transition duration-500 group-hover:scale-[1.02]" />
+                <span class="pointer-events-none absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-clay-500/90 text-cream opacity-0 transition group-hover:opacity-100">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-4 w-4"><path d="M4 9V4h5M20 15v5h-5M15 4h5v5M9 20H4v-5"/></svg>
+                </span>
+              </button>
+              <figcaption class="mt-3 px-1 text-sm leading-snug text-ink-soft">Университет современной психологии — консультативная психология, 1000 часов</figcaption>
+            </figure>
+
+            <figure class="group w-[80%] shrink-0 snap-center sm:w-[46%] lg:w-[32%]">
+              <button type="button" data-lightbox data-index="1" data-full="/img/usp_skolkovo.jpg"
+                      data-caption="Профессиональная переподготовка «Консультативная психология», квалификация «Психолог-консультант»"
+                      class="relative block w-full overflow-hidden rounded-2xl border border-white/60 bg-white shadow-[0_15px_45px_-28px_rgba(58,53,50,0.6)] transition hover:shadow-[0_22px_55px_-28px_rgba(58,53,50,0.6)] focus:outline-none focus-visible:ring-2 focus-visible:ring-clay-400">
+                <img src="/img/usp_skolkovo-thumb.jpg" alt="Диплом (УСП · Сколково)" loading="lazy" class="aspect-[3/2] w-full bg-white object-contain p-3 transition duration-500 group-hover:scale-[1.02]" />
+                <span class="pointer-events-none absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-clay-500/90 text-cream opacity-0 transition group-hover:opacity-100">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-4 w-4"><path d="M4 9V4h5M20 15v5h-5M15 4h5v5M9 20H4v-5"/></svg>
+                </span>
+              </button>
+              <figcaption class="mt-3 px-1 text-sm leading-snug text-ink-soft">Профессиональная переподготовка «Консультативная психология», квалификация «Психолог-консультант»</figcaption>
+            </figure>
+
+            <figure class="group w-[80%] shrink-0 snap-center sm:w-[46%] lg:w-[32%]">
+              <button type="button" data-lightbox data-index="2" data-full="/img/cert.jpg"
+                      data-caption="Краткосрочная терапия пар в транзактном анализе — международный проект сертифицированного обучения"
+                      class="relative block w-full overflow-hidden rounded-2xl border border-white/60 bg-white shadow-[0_15px_45px_-28px_rgba(58,53,50,0.6)] transition hover:shadow-[0_22px_55px_-28px_rgba(58,53,50,0.6)] focus:outline-none focus-visible:ring-2 focus-visible:ring-clay-400">
+                <img src="/img/cert-thumb.jpg" alt="Сертификат «ТА Факультет»" loading="lazy" class="aspect-[3/2] w-full bg-white object-contain p-3 transition duration-500 group-hover:scale-[1.02]" />
+                <span class="pointer-events-none absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-clay-500/90 text-cream opacity-0 transition group-hover:opacity-100">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-4 w-4"><path d="M4 9V4h5M20 15v5h-5M15 4h5v5M9 20H4v-5"/></svg>
+                </span>
+              </button>
+              <figcaption class="mt-3 px-1 text-sm leading-snug text-ink-soft">Краткосрочная терапия пар в транзактном анализе — международный проект сертифицированного обучения</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Price & conditions ===== -->
+      <section id="price" class="scroll-mt-20 py-16 sm:py-24">
+        <div class="section">
+          <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10">
+            <div>
+              <p class="eyebrow">Стоимость и условия</p>
+              <h2 class="heading">Прозрачные условия работы</h2>
+              <p class="mt-5 text-lg leading-relaxed text-ink-soft">
+                Ниже — базовые условия. Актуальную стоимость сессии я сообщаю в переписке:
+                так проще подобрать удобный формат и ответить на ваши вопросы.
+              </p>
+              <a href="#contacts" class="btn-primary mt-8">Узнать стоимость</a>
+            </div>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div class="card h-full">
+                <h3 class="font-display text-2xl text-ink">Индивидуальная сессия</h3>
+                <p class="mt-2 text-ink-soft">50 минут · онлайн</p>
+                <!-- TODO: укажите цену индивидуальной сессии (например, «5 000 ₽») -->
+                <p class="mt-4 font-display text-3xl text-clay-500">по запросу</p>
+              </div>
+              <div class="card h-full">
+                <h3 class="font-display text-2xl text-ink">Парная сессия</h3>
+                <p class="mt-2 text-ink-soft">80 минут · онлайн</p>
+                <!-- TODO: укажите цену парной сессии (например, «8 000 ₽») -->
+                <p class="mt-4 font-display text-3xl text-clay-500">по запросу</p>
+              </div>
+              <div class="card sm:col-span-2">
+                <h3 class="font-display text-2xl text-ink">Как мы работаем</h3>
+                <ul class="mt-4 space-y-3 text-ink-soft">
+                  <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-clay-400"></span>Стандартная частота встреч — 1 раз в неделю.</li>
+                  <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-clay-400"></span>Формат — онлайн; оффлайн-встречи возможны по запросу.</li>
+                  <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-clay-400"></span>Первая встреча — знакомство и прояснение запроса.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Contacts ===== -->
+      <section id="contacts" class="scroll-mt-20 py-16 sm:py-24">
+        <div class="section">
+          <div class="overflow-hidden rounded-[2.5rem] border border-white/60 bg-white/60 backdrop-blur-sm">
+            <div class="grid lg:grid-cols-2">
+              <!-- Left: contact info -->
+              <div class="p-8 sm:p-12">
+                <p class="eyebrow">Контакты</p>
+                <h2 class="heading">Запишитесь на консультацию</h2>
+                <p class="mt-5 text-lg leading-relaxed text-ink-soft">
+                  Напишите мне удобным способом или заполните форму — я отвечу и мы подберём время.
+                </p>
+
+                <div class="mt-8 space-y-3">
+                  <a href="https://wa.me/77717865756" target="_blank" rel="noopener"
+                     class="flex items-center gap-4 rounded-2xl border border-white/60 bg-white/70 p-4 transition hover:bg-white">
+                    <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-clay-50 text-clay-500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M4 20l1.3-4A7.5 7.5 0 1 1 8 18.7L4 20Z"/><path d="M9 9c0 4 2 6 6 6"/></svg></span>
+                    <span>
+                      <span class="block text-sm text-ink-faint">WhatsApp</span>
+                      <span class="font-medium text-ink">+7 771 786 5756</span>
+                    </span>
+                  </a>
+                  <a href="https://t.me/guleva_psy" target="_blank" rel="noopener"
+                     class="flex items-center gap-4 rounded-2xl border border-white/60 bg-white/70 p-4 transition hover:bg-white">
+                    <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-clay-50 text-clay-500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="m21 4-3 15-5-4-3 3-.5-4.5L18 6 6.5 12 3 11l18-7Z"/></svg></span>
+                    <span>
+                      <span class="block text-sm text-ink-faint">Telegram</span>
+                      <span class="font-medium text-ink">@guleva_psy</span>
+                    </span>
+                  </a>
+                  <a href="https://www.instagram.com/guleva_psy" target="_blank" rel="noopener"
+                     class="flex items-center gap-4 rounded-2xl border border-white/60 bg-white/70 p-4 transition hover:bg-white">
+                    <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-clay-50 text-clay-500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.2"/><circle cx="16.5" cy="7.5" r="0.6" fill="currentColor"/></svg></span>
+                    <span>
+                      <span class="block text-sm text-ink-faint">Instagram</span>
+                      <span class="font-medium text-ink">@guleva_psy</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right: Google Form placeholder -->
+              <div class="border-t border-white/60 bg-clay-50/50 p-8 sm:p-12 lg:border-l lg:border-t-0">
+                <h3 class="font-display text-2xl text-ink">Форма записи</h3>
+                <p class="mt-2 text-sm text-ink-soft">Оставьте заявку — я свяжусь с вами.</p>
+
+                <!--
+                  ===== МЕСТО ДЛЯ GOOGLE ФОРМЫ =====
+                  Вставьте сюда iframe вашей Google-формы вместо блока-заглушки ниже, например:
+                  <iframe src="https://docs.google.com/forms/d/e/XXXX/viewform?embedded=true"
+                          width="100%" height="720" frameborder="0"
+                          marginheight="0" marginwidth="0">Загрузка…</iframe>
+                  Готовые стили для оформления формы в фирменном стиле — в файле form.css.
+                -->
+                <div id="google-form"
+                     class="mt-5 flex min-h-[360px] items-center justify-center rounded-2xl border-2 border-dashed border-clay-200 bg-white/60 p-6 text-center">
+                  <p class="max-w-xs text-ink-faint">
+                    Здесь появится форма записи Google&nbsp;Forms.<br />
+                    <span class="text-sm">Вставьте &lt;iframe&gt; формы в блок <code class="rounded bg-clay-50 px-1">#google-form</code>.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="border-t border-white/50 py-10">
+      <div class="section flex flex-col items-center justify-between gap-4 text-sm text-ink-faint sm:flex-row">
+        <p class="font-display text-lg text-ink">Виктория Гульева</p>
+        <p class="text-center">Психолог-консультант · Член Европейской ассоциации транзактного анализа</p>
+        <div class="flex gap-4">
+          <a href="https://t.me/guleva_psy" target="_blank" rel="noopener" class="transition hover:text-clay-500">Telegram</a>
+          <a href="https://www.instagram.com/guleva_psy" target="_blank" rel="noopener" class="transition hover:text-clay-500">Instagram</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== Fullscreen lightbox for certificates (hidden by default) ===== -->
+    <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-ink/90 p-4 backdrop-blur-sm sm:p-8" role="dialog" aria-modal="true" aria-label="Просмотр документа">
+      <button type="button" data-lb-close aria-label="Закрыть"
+              class="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-cream transition hover:bg-white/20">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-6 w-6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <button type="button" data-lb-prev aria-label="Предыдущий"
+              class="absolute left-3 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-cream transition hover:bg-white/20 sm:left-6">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-6 w-6"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <button type="button" data-lb-next aria-label="Следующий"
+              class="absolute right-3 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-cream transition hover:bg-white/20 sm:right-6">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-6 w-6"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <figure class="flex max-h-full max-w-4xl flex-col items-center">
+        <img data-lb-img src="" alt="" class="max-h-[78vh] w-auto rounded-lg bg-white object-contain shadow-2xl" />
+        <figcaption data-lb-caption class="mt-4 max-w-2xl px-4 text-center text-sm text-cream/80"></figcaption>
+      </figure>
+    </div>
   </body>
 </html>
