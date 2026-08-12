@@ -16,7 +16,7 @@ export default {
           200: "#d9bda6",
           300: "#c69e7f",
           400: "#b3855f",
-          500: "#a2705a", // primary accent
+          500: "#5e3c2d", // primary accent
           600: "#8a5c49",
           700: "#6f4a3b",
         },

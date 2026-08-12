@@ -154,7 +154,7 @@
 .gform__textarea:focus {
   outline: none;
   border-color: var(--gf-clay-500);
-  box-shadow: 0 0 0 3px rgba(162, 112, 90, 0.18);
+  box-shadow: 0 0 0 3px rgb(94, 60, 45);
   background: #fff;
 }
 
@@ -209,7 +209,7 @@
 
 .gform__button:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(162, 112, 90, 0.35);
+  box-shadow: 0 0 0 3px rgb(94, 60, 45);
 }
 
 .gform__button:active {
