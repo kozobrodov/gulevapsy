@@ -437,20 +437,35 @@
                 <h3 class="font-display text-2xl text-ink">Форма записи</h3>
                 <p class="mt-2 text-sm text-ink-soft">Оставьте заявку — я свяжусь с вами.</p>
 
-                <!--
-                  ===== МЕСТО ДЛЯ GOOGLE ФОРМЫ =====
-                  Вставьте сюда iframe вашей Google-формы вместо блока-заглушки ниже, например:
-                  <iframe src="https://docs.google.com/forms/d/e/XXXX/viewform?embedded=true"
-                          width="100%" height="720" frameborder="0"
-                          marginheight="0" marginwidth="0">Загрузка…</iframe>
-                  Готовые стили для оформления формы в фирменном стиле — в файле form.css.
-                -->
-                <div id="google-form"
-                     class="mt-5 flex min-h-[360px] items-center justify-center rounded-2xl border-2 border-dashed border-clay-200 bg-white/60 p-6 text-center">
-                  <p class="max-w-xs text-ink-faint">
-                    Здесь появится форма записи Google&nbsp;Forms.<br />
-                    <span class="text-sm">Вставьте &lt;iframe&gt; формы в блок <code class="rounded bg-clay-50 px-1">#google-form</code>.</span>
-                  </p>
+                <!-- action и name намеренно оставлены пустыми — их заполнят при подключении обработчика. -->
+                <form class="gform mt-6" action="" method="post" novalidate data-appointment-form>
+                  <div class="gform__field" data-field>
+                    <label class="gform__label" for="form-name">Имя</label>
+                    <input class="gform__input" id="form-name" name="" type="text" required
+                           autocomplete="name" placeholder="Как к вам обращаться" />
+                    <p class="gform__error" data-error hidden></p>
+                  </div>
+
+                  <div class="gform__field" data-field>
+                    <label class="gform__label" for="form-contact">Контакты (WhatsApp / Telegram)</label>
+                    <input class="gform__input" id="form-contact" name="" type="text" required
+                           autocomplete="off" placeholder="@username или телефон" />
+                    <p class="gform__error" data-error hidden></p>
+                  </div>
+
+                  <div class="gform__field" data-field>
+                    <label class="gform__label gform__label--optional" for="form-topic">С&nbsp;чем вы хотите поработать? Что вас беспокоит больше всего?</label>
+                    <textarea class="gform__textarea" id="form-topic" name="" rows="4"
+                              placeholder="Опишите в двух словах — по желанию"></textarea>
+                  </div>
+
+                  <div class="gform__actions">
+                    <button type="submit" class="gform__button">Отправить</button>
+                  </div>
+                </form>
+
+                <div class="gform__success mt-6" data-form-success hidden>
+                  Спасибо! Я получила вашу заявку и свяжусь с вами в ближайшее время.
                 </div>
               </div>
             </div>
