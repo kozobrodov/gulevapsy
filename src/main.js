@@ -1,5 +1,5 @@
 // The page markup is static in index.html. This entry only pulls in the
-// stylesheet (processed by Vite/Tailwind) and adds the interactive behaviour
+// stylesheet (processed by Vite/Tailwind) and adds the interactive behavior
 // for the certificate carousel and its fullscreen lightbox.
 import './style.css'
 
@@ -93,8 +93,28 @@ if (form) {
   const fields = Array.from(form.querySelectorAll('[data-field]'))
   let submitted = false
 
+  const submitButton = form.querySelector('.gform__button')
+  const actions = form.querySelector('.gform__actions')
+
   const controlOf = (field) => field.querySelector('input, textarea')
   const errorOf = (field) => field.querySelector('[data-error]')
+
+  // Сообщение об ошибке отправки (уровень всей формы) создаётся при
+  // необходимости и переиспользуется дальше.
+  let formError = null
+  const showFormError = (message) => {
+    if (!formError) {
+      formError = document.createElement('p')
+      formError.className = 'gform__error'
+      formError.setAttribute('role', 'alert')
+      actions.insertAdjacentElement('afterend', formError)
+    }
+    formError.textContent = message
+    formError.hidden = false
+  }
+  const clearFormError = () => {
+    if (formError) formError.hidden = true
+  }
 
   const validateField = (field) => {
     const control = controlOf(field)
@@ -125,10 +145,32 @@ if (form) {
       return
     }
 
-    // TODO: здесь появится реальная отправка данных, когда будет готов action.
-    form.reset()
-    form.hidden = true
-    if (success) success.hidden = false
+    // Отправляем заявку в Google Forms. Эндпоинт formResponse не отдаёт
+    // CORS-заголовки, поэтому запрос идёт в режиме no-cors: ответ непрозрачный
+    // и прочитать его нельзя. Успешно завершившийся запрос считаем успешной
+    // отправкой, ошибку сети — неудачей.
+    clearFormError()
+    submitButton.disabled = true
+    submitButton.textContent = 'Отправляю…'
+
+    fetch(form.action, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new FormData(form),
+    })
+      .then(() => {
+        form.reset()
+        form.hidden = true
+        if (success) success.hidden = false
+      })
+      .catch(() => {
+        submitButton.disabled = false
+        submitButton.textContent = 'Отправить'
+        showFormError(
+          'Не удалось отправить заявку. Проверьте соединение и попробуйте ещё раз — ' +
+            'или напишите мне напрямую в WhatsApp либо Telegram.',
+        )
+      })
   })
 
   // После первой попытки отправки — проверяем поле по мере ввода.
