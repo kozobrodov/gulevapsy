@@ -101,13 +101,10 @@
             <div class="relative mx-auto max-w-sm lg:max-w-md">
               <!-- Warm glow behind the portrait -->
               <div class="absolute inset-0 -z-10 translate-y-6 scale-110 rounded-[3rem] bg-gradient-to-br from-rose-200/60 via-clay-100/50 to-transparent blur-2xl"></div>
-              <img
-                src="/img/hero.jpg"
-                width="1000" height="1333"
-                alt="Виктория Гульева, психолог-консультант"
-                class="hero-photo-mask w-full select-none"
-                fetchpriority="high"
-              />
+              <picture>
+                <source srcset="/img/hero.webp" type="image/webp">
+                <img src="/img/hero.jpg" width="1000" height="1333" alt="Виктория Гульева, психолог-консультант" class="hero-photo-mask w-full select-none" fetchpriority="high" />
+              </picture>
             </div>
           </div>
         </div>
@@ -151,13 +148,10 @@
 
           <div class="relative">
             <div class="absolute inset-0 -z-10 translate-x-4 translate-y-4 rounded-[2rem] bg-clay-100/60"></div>
-            <img
-              src="/img/about.jpg"
-              width="1200" height="1800"
-              alt="Виктория Гульева"
-              loading="lazy"
-              class="w-full rounded-[2rem] object-cover shadow-[0_25px_60px_-30px_rgba(58,53,50,0.6)]"
-            />
+            <picture>
+              <source srcset="/img/about.webp" type="image/webp">
+              <img src="/img/about.jpg" width="1200" height="1800" alt="Виктория Гульева" loading="lazy" class="w-full rounded-[2rem] object-cover shadow-[0_25px_60px_-30px_rgba(58,53,50,0.6)]" />
+            </picture>
           </div>
         </div>
       </section>
