@@ -476,8 +476,17 @@
                               placeholder="Опишите в двух словах — по желанию"></textarea>
                   </div>
 
+                  <div class="gform__consent">
+                    <input class="gform__checkbox" id="form-consent" type="checkbox" data-consent />
+                    <label class="gform__consent-label" for="form-consent">
+                      Нажимая кнопку «Отправить», я даю согласие на обработку моих персональных данных
+                      и их трансграничную передачу в соответствии с
+                      <a href="/privacy_policy.html" target="_blank" rel="noopener">Политикой конфиденциальности</a>.
+                    </label>
+                  </div>
+
                   <div class="gform__actions">
-                    <button type="submit" class="gform__button">Отправить</button>
+                    <button type="submit" class="gform__button" disabled>Отправить</button>
                   </div>
                 </form>
 
@@ -496,12 +505,22 @@
       <div class="section flex flex-col items-center justify-between gap-4 text-sm text-ink-faint sm:flex-row">
         <p class="font-display text-lg text-ink">Виктория Гульева</p>
         <p class="text-center">Психолог-консультант · Член Европейской ассоциации транзактного анализа</p>
-        <div class="flex gap-4">
+        <div class="flex flex-wrap items-center justify-center gap-4">
           <a href="https://t.me/guleva_psy" target="_blank" rel="noopener" class="transition hover:text-clay-500">Telegram</a>
           <a href="https://www.instagram.com/guleva_psy" target="_blank" rel="noopener" class="transition hover:text-clay-500">Instagram</a>
+          <a href="/privacy_policy.html" class="transition hover:text-clay-500">Политика конфиденциальности</a>
         </div>
       </div>
     </footer>
+
+    <!-- ===== Cookie notice (bottom-right, hidden until shown by JS) ===== -->
+    <div data-cookie-notice hidden
+         class="fixed bottom-4 right-4 z-30 max-w-[calc(100vw-2rem)] animate-fade-up sm:max-w-sm">
+      <div class="flex items-center gap-3 rounded-2xl border border-white/60 bg-cream/95 px-4 py-3 shadow-[0_15px_45px_-20px_rgba(58,53,50,0.6)] backdrop-blur-md">
+        <p class="text-sm leading-snug text-ink-soft">Сайт использует cookie-файлы</p>
+        <button type="button" data-cookie-accept class="btn-primary shrink-0 !px-4 !py-2 !text-xs">Ok</button>
+      </div>
+    </div>
 
     <!-- ===== Fullscreen lightbox for certificates (hidden by default) ===== -->
     <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-ink/90 p-4 backdrop-blur-sm sm:p-8" role="dialog" aria-modal="true" aria-label="Просмотр документа">

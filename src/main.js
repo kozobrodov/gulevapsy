@@ -179,4 +179,44 @@ if (form) {
       if (submitted) validateField(field)
     })
   })
+
+  // Согласие на обработку данных: кнопка отправки активна только тогда,
+  // когда чекбокс отмечен.
+  const consent = form.querySelector('[data-consent]')
+  if (consent) {
+    const syncConsent = () => {
+      submitButton.disabled = !consent.checked
+    }
+    consent.addEventListener('change', syncConsent)
+    syncConsent()
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Уведомление об использовании cookie-файлов
+ * Небольшой попап в правом нижнем углу; после нажатия «Ok» выбор
+ * запоминается в localStorage и попап больше не показывается.
+ * ------------------------------------------------------------------ */
+
+const cookieNotice = document.querySelector('[data-cookie-notice]')
+if (cookieNotice) {
+  const STORAGE_KEY = 'cookie-consent'
+  let accepted = false
+  try {
+    accepted = localStorage.getItem(STORAGE_KEY) === 'true'
+  } catch {
+    // localStorage может быть недоступен (приватный режим) — тогда покажем попап.
+  }
+
+  if (!accepted) {
+    cookieNotice.hidden = false
+    cookieNotice.querySelector('[data-cookie-accept]')?.addEventListener('click', () => {
+      cookieNotice.hidden = true
+      try {
+        localStorage.setItem(STORAGE_KEY, 'true')
+      } catch {
+        // Игнорируем, если сохранить выбор не удалось.
+      }
+    })
+  }
 }
