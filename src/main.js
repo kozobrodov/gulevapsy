@@ -145,6 +145,15 @@ if (form) {
       return
     }
 
+    const honeypot = form.querySelector('[name="nickname"]')
+    if (honeypot && honeypot.value.trim() !== '') {
+      clearFormError()
+      form.reset()
+      form.hidden = true
+      if (success) success.hidden = false
+      return
+    }
+
     // Отправляем заявку в Google Forms. Эндпоинт formResponse не отдаёт
     // CORS-заголовки, поэтому запрос идёт в режиме no-cors: ответ непрозрачный
     // и прочитать его нельзя. Успешно завершившийся запрос считаем успешной

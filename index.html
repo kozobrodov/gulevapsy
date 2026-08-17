@@ -448,12 +448,10 @@
                 </div>
               </div>
 
-              <!-- Right: Google Form placeholder -->
               <div class="border-t border-white/60 bg-clay-50/50 p-8 sm:p-12 lg:border-l lg:border-t-0">
                 <h3 class="font-display text-2xl text-ink">Форма записи</h3>
                 <p class="mt-2 text-sm text-ink-soft">Оставьте заявку — я свяжусь с вами.</p>
 
-                <!-- action и name намеренно оставлены пустыми — их заполнят при подключении обработчика. -->
                 <form class="gform mt-6" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe9471C5feRTkouz5F5c2ARLz5zYDtfD_1sedh3O17ihjTsVw/formResponse" method="post" novalidate data-appointment-form>
                   <input type="hidden" name="fvv" value="1">
                   <div class="gform__field" data-field>
@@ -474,6 +472,12 @@
                     <label class="gform__label gform__label--optional" for="form-topic">С&nbsp;чем вы хотите поработать? Что вас беспокоит больше всего?</label>
                     <textarea class="gform__textarea" id="form-topic" name="entry.428602396" rows="4"
                               placeholder="Опишите в двух словах — по желанию"></textarea>
+                  </div>
+
+                  <div class="gform__nickname">
+                    <label class="gform__label" for="form-nickname">Никнейм</label>
+                    <input class="gform__input" id="form-nickname" name="nickname" type="text"
+                           autocomplete="off" tabindex="-1" placeholder="Ваш никнейм" />
                   </div>
 
                   <div class="gform__consent">

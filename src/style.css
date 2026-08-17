@@ -115,6 +115,16 @@
   margin-bottom: 1.1rem;
 }
 
+.gform__nickname {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .gform__label {
   display: block;
   margin-bottom: 0.4rem;
